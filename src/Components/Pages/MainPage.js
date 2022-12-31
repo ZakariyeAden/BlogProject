@@ -25,6 +25,8 @@ function MainPage() {
   const deletedPost = id => {
     Axios.get(`https://blogs.herokuapp.com/api/delete/${id}`).then(response => {
       alert("You Deleted");
+    }).then((error) => {
+      console.log(error)
     });
   };
   return (

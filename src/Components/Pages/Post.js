@@ -15,6 +15,8 @@ function Post() {
         userName: data.data[0].user_name,
         
       });
+    }).then((error) => {
+      console.log(error);
     });
   }, []);
  
