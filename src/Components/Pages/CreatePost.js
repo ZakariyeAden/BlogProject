@@ -15,7 +15,7 @@ function CreatePost() {
   const submitPost = () => {
     console.log("works");
     console.log(data);
-    Axios.post("https://zippy-valkyrie-5048e6.netlify.app/api/create", data);
+    Axios.post("https://blogs.herokuapp.com/api/create", data);
   };
 
   return (
