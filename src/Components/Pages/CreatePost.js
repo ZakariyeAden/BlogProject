@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Style/App.css";
 import Axios from "axios";
-import { getAxiosErrorInterceptor,axiosClient } from 'redact-axios-error/axios-error-redact-interceptor'
+
 
 
 function CreatePost() {
@@ -20,11 +20,9 @@ function CreatePost() {
     console.log(data);
     Axios.post("https://blogs.herokuapp.com/api/create", data).then((error) => {
       console.log(error)
-    }).then((response) => {
-      console.log(response)
-    });
+    })
   };
-  axiosClient.interceptors.response.use(null, getAxiosErrorInterceptor())
+
 
   return (
     <div className="CreatePost">
