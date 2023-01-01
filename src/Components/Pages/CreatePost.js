@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../Style/App.css";
 import Axios from "axios";
+import { getAxiosErrorInterceptor } from 'redact-axios-error/axios-error-redact-interceptor'
+
+
 function CreatePost() {
   const [userName, setUserName] = useState("");
   const [title, setTitle] = useState("");
@@ -21,7 +24,8 @@ function CreatePost() {
       console.log(response)
     });
   };
-
+  axiosClient.interceptors.response.use(null, getAxiosErrorInterceptor())
+  
   return (
     <div className="CreatePost">
       <div className="uploadPost">
